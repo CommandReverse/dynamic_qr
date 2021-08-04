@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for qr_code in qr_codes %}
+    <div class="container-fluid content-section">
+        <div class="row">
+            <div class="col-md-8">
+                <span>Name : {{ qr_code.filename }}</span><br>
+                <span>Endpoint : {{ qr_code.endpoint }}</span>
+            </div>
+            <div class="col-md-4">
+                <img class="img-thumbnail" src="{{ url_for('static', filename='qr_codes/' + qr_code.filename) }}">
+                <a class="btn btn-secondary btn-sm mt-1 mb-1 float-sm-left" href="{{ url_for('edit', id=qr_code.id) }}">Edit</a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1 float-sm-right" href="{{ url_for('delete', id=qr_code.id) }}">Delete</a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% if pagination %}
+<div class="pagination">
+    {% include "_pagination.html" %}
+</div>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,4 @@
+#.flaskenv
+FLASK_APP=app
+FLASK_DEBUG=False
+FLASK_RUN_PORT=8080

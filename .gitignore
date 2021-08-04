@@ -1,0 +1,10 @@
+# dev dependencies
+
+.vscode
+__pycache__/
+poetry.lock
+certs/
+.env
+*.sqlite
+migrations
+dynamic_qr/static/qr_codes/
